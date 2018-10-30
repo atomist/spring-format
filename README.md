@@ -1,32 +1,13 @@
 # spring-format
-my new project
 
-Based on seed project `spring-team:spring-rest-seed`
+This library is a wrapper over the Spring formatter Maven plugin, allowing you to run it as an executable JAR.
+When running, the tool will format every Java file in the current working directory.
 
 ## Development
 
 This project is driven using [Maven][mvn].
 
 [mvn]: https://maven.apache.org/
-
-### Run locally
-
-You can run the service locally using the following from the command:
-
-```
-$ ./mvnw spring-boot:run
-
-```
-
-### Run tests
-
-This service comes with some basic tests as a good starting
-point for writing your own.  Use the following command to execute the
-tests using Maven:
-
-```
-$ ./mvnw test
-```
 
 ---
 Created by [Atomist][atomist].
