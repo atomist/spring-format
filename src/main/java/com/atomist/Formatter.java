@@ -1,8 +1,10 @@
 
 package com.atomist;
 
-import java.io.Files;
+import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import java.nio.charset.StandardCharsets;
 
 import io.spring.javaformat.formatter.FileEdit;
 import io.spring.javaformat.formatter.FileFormatter;
@@ -10,14 +12,14 @@ import io.spring.javaformat.formatter.FileFormatterException;
 
 public class Formatter {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
         String path = args[0];
         try {
             FileFormatter formatter = new FileFormatter();
             Files.walk(Paths.get(path))
-                .filter(f -> Files.isRegularFile())
-                .filter(f -> f.getName().endsWith(".java"))
-                .forEach(f -> formatter.formatFile(f, "UTF-8"))
+                .filter(Files::isRegularFile)
+                .filter(f -> f.getFileName().toString().endsWith("java"))
+                .map(f -> formatter.formatFile(f.toFile(), StandardCharsets.UTF_8))
                 .forEach(Formatter::save);
         }
         catch (FileFormatterException ex) {
@@ -27,7 +29,7 @@ public class Formatter {
 
     private static void save(FileEdit edit) {
 		System.out.println("Formatting file " + edit.getFile());
-		//edit.save();
+		edit.save();
 	}
     
 }
