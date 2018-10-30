@@ -7,12 +7,7 @@
    <packaging>jar</packaging>
    <name>spring-format</name>
    <description>spring-format</description>
-   <parent>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-parent</artifactId>
-      <version>1.5.4.RELEASE</version>
-      <relativePath />
-   </parent>
+  
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -20,39 +15,13 @@
    </properties>
    <dependencies>
       <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-actuator</artifactId>
-      </dependency>
-      <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-web</artifactId>
-      </dependency>
-      <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-test</artifactId>
-         <scope>test</scope>
-      </dependency>
-      <!-- Atomist agent -->
-      <dependency>
-         <groupId>com.atomist</groupId>
-         <artifactId>spring-boot-agent</artifactId>
-         <version>[0.1.5,1.0.0)</version>
+         <groupId>io.spring.javaformat</groupId>
+			  <artifactId>spring-javaformat-maven-plugin</artifactId>
+			  <version>0.0.6</version>
       </dependency>
    </dependencies>
    <build>
-      <plugins>
-         <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-         </plugin>
-         <plugin>
-            <groupId>pl.project13.maven</groupId>
-            <artifactId>git-commit-id-plugin</artifactId>
-            <configuration>
-               <verbose>false</verbose>
-            </configuration>
-         </plugin>
-      </plugins>
+      
    </build>
    <repositories>
       <repository>
