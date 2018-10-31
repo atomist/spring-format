@@ -1,6 +1,6 @@
 # spring-format
 
-This library is a wrapper over the Spring formatter Maven plugin, allowing you to run it as an executable JAR.
+This library is a wrapper over the [Spring formatter Maven plugin](https://github.com/spring-io/spring-javaformat), allowing you to run it as an executable JAR.
 When running, the tool will format every Java file in the current working directory.
 
 ## Development
