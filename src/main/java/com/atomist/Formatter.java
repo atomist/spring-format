@@ -44,6 +44,7 @@ public class Formatter {
 				s.filter(Files::isRegularFile)
 							.filter(f -> f.getFileName().toString().endsWith("java"))
 							.map(f -> formatter.formatFile(f.toFile(), StandardCharsets.UTF_8))
+							.filter(FileEdit::hasEdits)
 							.forEach(Formatter::save);
 			}
 		} catch (FileFormatterException ex) {
